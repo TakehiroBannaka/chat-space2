@@ -35,5 +35,5 @@
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :group
-- belongs_to :user
+- has_many :groups
+- has_many :users, throught: :groups
