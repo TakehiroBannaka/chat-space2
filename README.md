@@ -7,7 +7,8 @@
 |mail|integer|null: false, foreign_key: true|
 
 ### Association
-- has_many :groups
+- has_many :groups, throught: :groups_users
+- has_many :groups_users
 - has_many :messages
 
 
@@ -23,7 +24,7 @@
 
 ### Association
 - belongs_to :user
-- has_many :groups
+- belongs_to :groups
 
 
 
@@ -35,5 +36,18 @@
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
-- has_many :groups
-- has_many :users, throught: :groups
+- belongs_to :groups
+- has_many :users
+
+
+
+## groups_テーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|text|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+
+### Association
+- has_many :users
+- belongs_to :groups_users
