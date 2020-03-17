@@ -15,9 +15,9 @@
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|foreign_key: true|
-|group_id|integer|foreign_key: true|
-|message|text|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+|message|text|
 |image|string|
 
 ### Association
@@ -35,7 +35,7 @@
 
 ### Association
 - belongs_to :group
-- has_many :users
+- belongs_to :user
 
 
 
