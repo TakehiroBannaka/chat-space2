@@ -2,8 +2,7 @@
 ## userテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|text|null: false|
-|user_id|integer|null: false, foreign_key: true|
+|name|string|null: false|
 |mail|integer|null: false, foreign_key: true|
 
 ### Association
@@ -16,15 +15,14 @@
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|text|null: fales|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
-|message|text,integer|null: false|
+|user_id|integer|foreign_key: true|
+|group_id|integer|foreign_key: true|
+|message|text|null: false|
 |image|string|
 
 ### Association
 - belongs_to :user
-- belongs_to :groups
+- belongs_to :group
 
 
 
@@ -36,7 +34,7 @@
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :groups
+- belongs_to :group
 - has_many :users
 
 
@@ -44,11 +42,9 @@
 ## groups_テーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|text|null: false|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|name|string|null: false|
 
 ### Association
-- has_many :users
-- belongs_to :groups_users
+- has_many :users, through: :groups_users
+- has_many :groups_users
 - has_many :messages
