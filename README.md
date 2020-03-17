@@ -7,13 +7,13 @@
 |mail|integer|null: false, foreign_key: true|
 
 ### Association
-- has_many :groups, throught: :groups_users
+- has_many :groups, through: :groups_users
 - has_many :groups_users
 - has_many :messages
 
 
 
-## messageテーブル
+## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|text|null: fales|
@@ -51,3 +51,4 @@
 ### Association
 - has_many :users
 - belongs_to :groups_users
+- has_many :messages
