@@ -1,0 +1,44 @@
+.main_chat
+  .main_chat__header
+    .main_chat__header__left-box
+      .main_chat__header__left-box__current-title
+        カレントタイトル
+        .main_chat__header__left-box__member-list
+          Member : マクドナルド
+    .main_chat__header__btnbox
+      = link_to "#", class: "btnbox__edit" do
+        Edit
+  .main_chat__messages
+    .main_chat__messages__box
+      .main_chat__messages__box__upper-info
+        .main_chat__messages__box__upper-info__name
+          masa
+        .main_chat__messages__box__upper-info__date
+          2019/11/20(Wed)17:43:01
+    .main_chat__messages__text
+      おはよう！
+    .main_chat__messages__box
+      .main_chat__messages__box__upper-info
+        .main_chat__messages__box__upper-info__name
+          masa
+        .main_chat__messages__box__upper-info__date
+          2019/11/20(Wed)17:43:01
+    .main_chat__messages__text
+      おはよう！
+
+
+
+
+
+  .main_chat__form
+    .main_chat__form__new_message
+      .input_box
+        %input{type: "text", class: "input_box__text", placeholder: "type a message"}
+        %labe{class: "input_box__image"}
+          = icon('fas','image')
+          %input{type: "file", class: "input_box__image__file"}      
+      %input{type: "submit", class: "submit-btn", value: "Send"}
+      
+
+
+  
