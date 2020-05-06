@@ -6,19 +6,16 @@
           = current_user.name
       .side_bar__header__topitems__iconbox
         .side_bar__header__topitems__iconbox__icons
-        = link_to "#", class: "iconbox__icons" do
+        = link_to new_group_path , class: "iconbox__icons" do
           = icon('fas','edit')
         .side_bar__header__topitems__iconbox__icons
         = link_to edit_user_path(current_user) , class: "iconbox__icons" do
           = icon('fas','cog')  
   .side_bar__group
-    .side-bar__group__message
-      .side_bar__group__message__title
-        techcamp
-      .side_bar__group__message__text
-        まだメッセージはありません
-    .side-bar__group__message
-      .side_bar__group__message__title
-        techcamp
-      .side_bar__group__message__text
-        まだメッセージはありません
+    - current_user.groups.each do |group|
+      .group
+        = link_to '#' do
+          .group__name
+            = group.name
+          .group__message
+            メッセージはまだありません。
