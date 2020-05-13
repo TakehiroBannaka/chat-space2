@@ -13,9 +13,9 @@
           = icon('fas','cog')  
   .side_bar__group
     - current_user.groups.each do |group|
-      .group
-        = link_to '#' do
-          .group__name
+      .side_bar__group__message
+        = link_to group_messages_path(group) do
+          .side_bar__group__message__title
             = group.name
-          .group__message
-            メッセージはまだありません。
+          .side_bar__group__message__text
+            = group.show_last_message
