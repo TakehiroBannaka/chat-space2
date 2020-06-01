@@ -64,9 +64,6 @@ group :test do
   gem 'webdrivers'
 end
 
-gem 'carrierwave'
-gem 'fog-aws'
-
 group :production do
   gem 'unicorn', '5.4.1'
 end
@@ -80,3 +77,5 @@ gem 'pry-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'jquery-rails'
+gem 'carrierwave'
+gem 'fog-aws'
